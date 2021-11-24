@@ -180,4 +180,3 @@ def train_model_based_on_inputs(search_inputs):
     
     return model
 
-train_model_based_on_inputs(search_inputs=search_inputs)
