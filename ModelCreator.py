@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from tensorflow import one_hot
 from tensorflow import keras
 from tensorflow.keras.preprocessing import image_dataset_from_directory
+import streamlit as st
 
 BASE_DIR = "./images" # TODO CHECK
 IMAGE_SIZE_H = 256
@@ -71,6 +72,7 @@ def one_hot_ds(ds, depth):
 
 print("The pipeline starts...")
 
+@st.cache
 def train_model_based_on_inputs(search_inputs):
 
     # Download everything that is needed here. Pass the files through the filters and delete the bad images.
