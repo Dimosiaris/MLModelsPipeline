@@ -12,9 +12,8 @@ from pathlib import Path
 import imghdr
 import os
 import matplotlib.pyplot as plt
-import tensorflow as tf
+from tensorflow import one_hot
 from tensorflow import keras
-from tensorflow.keras import layers
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 
 BASE_DIR = "./images" # TODO CHECK
@@ -67,7 +66,7 @@ def remove_other_filetypes():
                 os.remove(filepath)
 
 def one_hot_ds(ds, depth):
-    ds = ds.map(lambda x, y: (x, tf.one_hot(y, depth=depth)))
+    ds = ds.map(lambda x, y: (x, one_hot(y, depth=depth)))
     return ds
 
 print("The pipeline starts...")
