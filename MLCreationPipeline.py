@@ -1,4 +1,3 @@
-from typing import BinaryIO
 import streamlit as st
 import ModelCreator as mc
 import os
