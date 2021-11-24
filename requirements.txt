@@ -1,7 +1,6 @@
 base58==2.1.1
 bing-image-downloader==1.1.1
 keras==2.7.0
-keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
 libclang==12.0.0
 matplot==0.1.9
