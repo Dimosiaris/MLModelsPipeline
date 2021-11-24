@@ -166,15 +166,21 @@ def train_model_based_on_inputs(search_inputs):
 
     print(model.summary())
 
+    print("Starting the model compilation...")
     # Compile and fit the model.
     model.compile(
         optimizer = keras.optimizers.Adam(),
         loss = keras.losses.CategoricalCrossentropy(),
         metrics=[keras.metrics.categorical_accuracy],
     )
+    print("Finished the model compilation!")
     epochs = 1
+    print("Starting the model training...")
     model.fit(train_ds, epochs=epochs, validation_data=val_ds)
+    print("Finished the model training!")
+    print("Starting the model saving...")
     model.save('./models', save_format='tf')
+    print("Finished the model saving!")
     print("The pipeline finished!")
     
     return model

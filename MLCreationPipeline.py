@@ -23,7 +23,9 @@ with st.form(key="search_form", clear_on_submit=True):
             for term in search_inputs:
                 model_name += "-"
                 model_name += term 
+            print("Saving the zip file...")
             shutil.make_archive(model_name, 'zip', './models')
+            print("Done saving the zip file!")
 
 if os.path.isfile('./' + model_name + ".zip"):
     with open(model_name + ".zip", "rb") as model_file:
